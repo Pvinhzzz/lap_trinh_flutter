@@ -1,0 +1,27 @@
+{
+    "name": "Flutter Mobile Workspace",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "dart.flutterSdkPath": "/opt/flutter"
+            },
+            "extensions": [
+                "dart-code.flutter",
+                "dart-code.dart-code",
+                "GitHub.copilot"
+            ]
+        }
+    },
+    "forwardPorts": [8080],
+    "portsAttributes": {
+        "8080": {
+            "label": "Flutter Web",
+            "onAutoForward": "notify"
+        }
+    },
+    "postCreateCommand": "flutter doctor && flutter pub get",
+    "remoteUser": "root"
+}
